@@ -1,19 +1,11 @@
-.App {
-  text-align: center;
+
+.noselect {
+  user-select: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.body {
+  font-family: Georgia, serif;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,17 +14,136 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
+  cursor: url('images/cursorIconLlama.png'),crosshair;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+#pfp {
+  margin: 1%;
+  width: 10rem;
+}
+
+#pfp:hover {
+  cursor: crosshair;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.round-15 {
+  border-radius: 15px;
+}
+
+.center {
+  justify-content: center;
+  text-align: center;
+}
+
+.blue-highlight {
+  background-color: #61dafb;
+}
+
+.red-highlight {
+  background-color: #d56262;
+}
+
+.card-body {
+  font-size: 12px;
+  padding-bottom: 2%;
+  min-height: 50%;
+}
+
+.card {
+  z-index: 3;
+
+  background-color: #404348;
+  width: 30%;
+  border-width: 5px;
+  border-image: linear-gradient(5deg, #d56262 50%, rgb(212, 212, 212) 50%);
+  border-image-slice: 2;
+}
+
+.card-hover {
+  background-color: #404348;
+
+  width: 30%;
+  border-width: 5px;
+  border-image: linear-gradient(185deg, #d56262 50%, rgb(212, 212, 212) 50%);
+  border-image-slice: 2;
+}
+
+#text .text {
+  font-size: 14px;
+}
+
+#name {
+  font-size: 30px;
+  font-style: italic;
+  display: block;
+}
+
+#logo {
+  width:20px;
+  margin: 1%;
+}
+
+#counter {
+  position: absolute;
+  font: 12px;
+  max-height:42px;
+  min-width: 30px;
+  right: 60.5%;
+  top: 60.6%; 
+  z-index: 6;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+:root {
+  --drop-height: 100px;
+  --logo-size: 50px;
+  --offset: 48%;
+  --rightOff: 60%;
+}
+
+#duck {
+  display: block;
+  z-index: 10;
+  position: absolute;
+  right: var(--rightOff);
+  top: var(--offset);
+  
+  animation-name: bounce; 
+  animation-duration: 0.7s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.65, 0.05, 0.795, 0.135);
+  animation-iteration-count: infinite;
+}
+
+#duck:hover {
+  animation-name: spin;
+}
+
+@keyframes bounce {
+  from { 
+    transform: translateY(0) scale(1);
+  }
+  to   { 
+    transform: translateY(var(--drop-height)) scale(1, 0.7);
   }
 }
