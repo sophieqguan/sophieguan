@@ -67,6 +67,8 @@
 }
 
 .card-body {
+  align-items: center;
+  z-index: 3;
   font-size: 12px;
   padding-bottom: 2%;
   min-height: 50%;
@@ -74,7 +76,7 @@
 
 .card {
   z-index: 3;
-
+  align-items: center;
   background-color: #404348;
   width: 30%;
   border-width: 5px;
@@ -84,11 +86,36 @@
 
 .card-hover {
   background-color: #404348;
-
+  z-index: 3;
   width: 30%;
   border-width: 5px;
   border-image: linear-gradient(185deg, #d56262 50%, rgb(212, 212, 212) 50%);
   border-image-slice: 2;
+}
+
+@media only screen and (max-width: 1000px) {
+  .card {
+    width: 80%;
+  }
+  .card-body {
+    width: 80%;
+  }
+
+  .card-hover {
+    width: 80%;
+  }
+
+  #counter {
+    display: none;
+  }
+
+  #random {
+    display: none;
+  }
+
+  #duck {
+    display: none;
+  }
 }
 
 #text .text {
@@ -136,17 +163,18 @@
   --logo-size: 50px;
   --offset: 48%;
   --rightOff: 60%;
+  --z: 10;
 }
 
 #duck {
   display: block;
-  z-index: 10;
+  z-index: var(--z);
   position: absolute;
   right: var(--rightOff);
   top: var(--offset);
   
   animation-name: bounce; 
-  animation-duration: 0.7s;
+  animation-duration: 1s;
   animation-direction: alternate;
   animation-timing-function: cubic-bezier(0.65, 0.05, 0.795, 0.135);
   animation-iteration-count: infinite;

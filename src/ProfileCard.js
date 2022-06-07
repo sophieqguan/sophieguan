@@ -26,7 +26,7 @@ function Display () {
                 <div className="col"></div>
                 <div className="col">
                     <a href="https://github.com/sophieqguan" target="_blank" rel="noopener noreferrer"><img id="logo" src={require("./images/gitlight.png")} alt="github"/></a>
-                    <a href="./documents/Resume.pdf" target="_blank" rel="noopener noreferrer"><img id="logo" src={require("./images/document.png")} alt="resume"/></a>
+                    <a href="documents/Resume.pdf"><img id="logo" src={require("./images/document.png")} alt="resume"/></a>
                     <a href="https://www.linkedin.com/in/sophieguan03/" target="_blank" rel="noopener noreferrer"><img id="logo" src={require("./images/lin.png")} alt="linkedin"/></a>
                     
                 </div> 
