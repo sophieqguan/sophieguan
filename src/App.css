@@ -62,6 +62,10 @@
   background-color: #d56262;
 }
 
+.gray-highlight {
+  background-color: rgb(135, 135, 135);
+}
+
 .card-body {
   font-size: 12px;
   padding-bottom: 2%;
@@ -108,6 +112,19 @@
   max-height:42px;
   min-width: 30px;
   right: 60.5%;
+  top: 60.6%; 
+  z-index: 6;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+
+#random {
+  position: absolute;
+  font: 12px;
+  max-height:42px;
+  min-width: 30px;
+  left: 60.5%;
   top: 60.6%; 
   z-index: 6;
   text-align: center;

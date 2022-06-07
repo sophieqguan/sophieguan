@@ -4,8 +4,8 @@ import { animations } from 'react-animation'
 function Display () {
 
   const [click, setClick] = useState(0);
+  const [random, setRandom] = useState(2);
   const [curPic, setPic] = useState("human");
-
 
   function randomNum (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -37,8 +37,7 @@ function Display () {
                 alt="..." 
                 onClick = {e => {
                   setClick(click + 1);
-                  let random = randomNum(2, 10);
-                  // console.log(click);
+                  if (random === 0) setRandom(randomNum(2, 10));
                   if (click !== 0 && click % 50 === 0) {
                     alert("You've been here for a while... Maybe it's time to let go...")
                   }
@@ -60,11 +59,13 @@ function Display () {
                       }
                       cur.style.animation = animations.bounceIn;
                     }, 1000);
+                    setRandom(randomNum(2, 10));
                 }}}
           />
       </div>
       <p className="red-highlight" id="counter"> {click} </p>
       <img id="duck" src={require("./images/duck.png")} alt="duck"></img> 
+      <p className="gray-highlight" id="random"> {random} </p>
     </div>
    )
 }
