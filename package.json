@@ -2,7 +2,7 @@
   "name": "personal_page",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sophieqguan.github.io/sophieguan",
+  "homepage": "https://sophieqguan.github.io/sophieguan/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
