@@ -82,6 +82,9 @@
   border-width: 5px;
   border-image: linear-gradient(5deg, #d56262 50%, rgb(212, 212, 212) 50%);
   border-image-slice: 2;
+
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .card-hover {
@@ -91,6 +94,9 @@
   border-width: 5px;
   border-image: linear-gradient(185deg, #d56262 50%, rgb(212, 212, 212) 50%);
   border-image-slice: 2;
+
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -114,7 +120,11 @@
   }
 
   #duck {
-    display: none;
+    display: none !important;
+  }
+
+  #space {
+    display: none !important;
   }
 }
 
@@ -139,7 +149,7 @@
   max-height:42px;
   min-width: 30px;
   right: 60.5%;
-  top: 30.6%; 
+  top: 35.6%; 
   z-index: 6;
   text-align: center;
   padding-bottom: 30px;
@@ -152,7 +162,7 @@
   max-height:42px;
   min-width: 30px;
   left: 60.5%;
-  top: 30.6%; 
+  top: 35.6%; 
   z-index: 6;
   text-align: center;
   padding-bottom: 30px;
@@ -191,6 +201,28 @@
   height: 50px;
 }
 
+#zoom-duck {
+  z-index: 12;
+  width: 40px;
+  position: absolute;
+  left: 0px;
+  
+  animation-duration: 4s;
+  animation-name: goRight;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes goRight {
+  from {
+    transform: translate(0,0);
+  }
+
+  to {
+    transform: translate(97vw,0);
+  }
+}
+
 #space {
   z-index: 1000000;
   position: absolute;
@@ -199,6 +231,9 @@
   border: none;
   filter: drop-shadow(5px 5px 4px rgb(33, 33, 33));
   background-color: #d56262;
+
+  height: 100px;
+  padding: 1%;
 }
 
 #duck:hover {
