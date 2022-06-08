@@ -3,28 +3,44 @@ import { animations } from 'react-animation'
 
 function Display () {
 
-  const [click, setClick] = useState(0);
-  const [random, setRandom] = useState(2);
-  const [curPic, setPic] = useState("human");
+  const [click, setClick] = useState(0); // count number of clicks
+  const [random, setRandom] = useState(2); // random number that clicks should match to change picture
+  const [curPic, setPic] = useState("human"); // current picture ('llama' or 'human') [maybe it's an alpaca idk]
 
+  // random number generator
   function randomNum (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-  function switchLook(look) {
-      if (look === 0) { // pfp to llama
-          document.getElementById("card").classList.add("card-hover");
-          
-          document.getElementById("text1").style.display = "none";
-          document.getElementById("text2").style.display = "block";
-      }
-      else if (look === 1) { // llama to pfp
-          document.getElementById("card").classList.add("card");
-          document.getElementById("card").classList.remove("card-hover");
 
-          document.getElementById("text1").style.display = "block";
-          document.getElementById("text2").style.display = "none";
+  // change picture and text display from human to llama or llama to human
+  function switchLook() {
+
+    let pfp = document.getElementById("pfp"); // picture reference
+    let card = document.getElementById("card"); // about me card reference
+    let aboutMe1 = document.getElementById("text1"); // about me text, side human reference
+    let aboutMe2 = document.getElementById("text2"); // about me text, side llama reference
+    
+      if (curPic === "human") { // human to llama
+          card.classList.add("card-hover");
+          aboutMe1.style.display = "none";
+          aboutMe2.style.display = "block";
+
+          pfp.src = require("./images/llamaFull.png");
+          pfp.classList.remove("round");
+          setPic("llama");
+      }
+      else if (curPic === "llama") { // llama to human
+          card.classList.add("card");
+          card.classList.remove("card-hover");
+          aboutMe1.style.display = "block";
+          aboutMe2.style.display = "none";
+
+          pfp.src = require("./images/profilePicture.jpg");
+          pfp.classList.add("round");
+          setPic("human");
       }
       
+      pfp.style.animation = animations.bounceIn;
   }
 
   return (
@@ -34,31 +50,21 @@ function Display () {
                 style={{animation: animations.bounceIn}}
                 className="card-img-top round noselect" 
                 id="pfp" 
-                alt="..." 
+                alt="picture of big face" 
                 onClick = {e => {
                   setClick(click + 1);
                   if (random === 0) setRandom(randomNum(2, 10));
+
                   if (click !== 0 && click % 50 === 0) {
                     alert("You've been here for a while... Maybe it's time to let go...")
                   }
+
                   if (click % random === 0) {
                     e.currentTarget.style.animation = animations.bounceOut;
                     setTimeout(function () {
-                      let cur = document.getElementById("pfp");
-                      if (curPic === "human") {
-                        switchLook(0);
-                        cur.src = require("./images/llamaFull.png");
-                        cur.classList.remove("round");
-                        setPic("llama");
-                      }
-                      else if (curPic === "llama") {
-                        switchLook(1);
-                        cur.src = require("./images/profilePicture.jpg");
-                        cur.classList.add("round");
-                        setPic("human");
-                      }
-                      cur.style.animation = animations.bounceIn;
+                      switchLook();
                     }, 1000);
+                    
                     setRandom(randomNum(2, 10));
                 }}}
           />

@@ -180,6 +180,21 @@
   animation-iteration-count: infinite;
 }
 
+#btn {
+  width: 50px;
+  height: 50px;
+}
+
+#space {
+  z-index: 1000000;
+  position: absolute;
+  font-size: 10px;
+  outline: none;
+  border: none;
+  filter: drop-shadow(5px 5px 4px rgb(33, 33, 33));
+  background-color: #d56262;
+}
+
 #duck:hover {
   animation-name: spin;
 }
