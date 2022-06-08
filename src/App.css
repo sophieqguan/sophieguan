@@ -78,7 +78,7 @@
   z-index: 3;
   align-items: center;
   background-color: #404348;
-  width: 30%;
+  width: var(--card-size);
   border-width: 5px;
   border-image: linear-gradient(5deg, #d56262 50%, rgb(212, 212, 212) 50%);
   border-image-slice: 2;
@@ -87,7 +87,7 @@
 .card-hover {
   background-color: #404348;
   z-index: 3;
-  width: 30%;
+  width: var(--card-size);
   border-width: 5px;
   border-image: linear-gradient(185deg, #d56262 50%, rgb(212, 212, 212) 50%);
   border-image-slice: 2;
@@ -139,7 +139,7 @@
   max-height:42px;
   min-width: 30px;
   right: 60.5%;
-  top: 60.6%; 
+  top: 30.6%; 
   z-index: 6;
   text-align: center;
   padding-bottom: 30px;
@@ -152,18 +152,24 @@
   max-height:42px;
   min-width: 30px;
   left: 60.5%;
-  top: 60.6%; 
+  top: 30.6%; 
   z-index: 6;
   text-align: center;
   padding-bottom: 30px;
 }
 
 :root {
-  --drop-height: 100px;
+  --drop-height: 120px;
   --logo-size: 50px;
-  --offset: 48%;
-  --rightOff: 60%;
+  --topOff: 45%;
+  --rightOff: 65%;
   --z: 10;
+
+  --card-size: 45%;
+}
+
+.left-align {
+  text-align: left;
 }
 
 #duck {
@@ -171,7 +177,7 @@
   z-index: var(--z);
   position: absolute;
   right: var(--rightOff);
-  top: var(--offset);
+  top: var(--topOff);
   
   animation-name: bounce; 
   animation-duration: 1s;

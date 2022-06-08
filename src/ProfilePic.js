@@ -58,15 +58,17 @@ function Display () {
                   if (click !== 0 && click % 50 === 0) {
                     alert("You've been here for a while... Maybe it's time to let go...")
                   }
-
+                  
                   if (click % random === 0) {
                     e.currentTarget.style.animation = animations.bounceOut;
+
                     setTimeout(function () {
                       switchLook();
                     }, 1000);
                     
                     setRandom(randomNum(2, 10));
-                }}}
+                  }
+                }}
           />
       </div>
       <p className="red-highlight" id="counter"> {click} </p>

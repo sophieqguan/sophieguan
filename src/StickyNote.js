@@ -10,7 +10,6 @@ function Note () {
     const [animation, setAnimation] = useState(animations.popIn);
 
     const ref = useRef(null); // reference to note obj
-    const mainPic = document.getElementById("pfp"); // reference to profile pic
     // useEffect(() => console.log(top + ", " + left), [display]);
 
     /** on [display] change, handle mouse clicks
@@ -20,17 +19,19 @@ function Note () {
     useEffect(() => {
         const handleMouseClick = (event) => {
             // console.log(event.target);
-            if (display === "block" && (ref.current && !ref.current.contains(event.target) && !mainPic.contains(event.target))) {
-                setDisplay("none");
+            let mainPic = document.getElementById("pfp"); // reference to profile pic
+            if (ref.current && !ref.current.contains(event.target) && !mainPic.contains(event.target)) {
+                if (display === "block") {
+                    setDisplay("none");
+                }
+                else if (display === "none") {
+                    setDisplay("block");
+                    setAnimation(animations.popOut);
+                    setLeft(event.clientX);
+                    setTop(event.clientY);
+                    setAnimation(animations.popIn);
+                }
             }
-            else if (display === "none") {
-                setDisplay("block");
-                setAnimation(animations.popOut);
-                setLeft(event.clientX);
-                setTop(event.clientY);
-                setAnimation(animations.popIn);
-            }
-
             // console.log(x+ ", " + y);
             // alert("!!!");
         }
