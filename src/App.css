@@ -19,7 +19,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #38bdf8;
 }
 
 @keyframes spin {
@@ -55,11 +55,11 @@
 }
 
 .blue-highlight {
-  background-color: #61dafb;
+  background-color: #38bdf8;
 }
 
 .red-highlight {
-  background-color: #d56262;
+  background-color: #ff8c42;
 }
 
 .gray-highlight {
@@ -80,7 +80,7 @@
   background-color: #404348;
   width: var(--card-size);
   border-width: 5px;
-  border-image: linear-gradient(5deg, #d56262 50%, rgb(212, 212, 212) 50%);
+  border-image: linear-gradient(5deg, #ff8c42 50%, #38bdf8 50%);
   border-image-slice: 2;
 
   padding-left: 0px;
@@ -92,7 +92,7 @@
   z-index: 3;
   width: var(--card-size);
   border-width: 5px;
-  border-image: linear-gradient(185deg, #d56262 50%, rgb(212, 212, 212) 50%);
+  border-image: linear-gradient(185deg, #ff8c42 50%, #38bdf8 50%);
   border-image-slice: 2;
 
   padding-left: 0px;
@@ -230,7 +230,7 @@
   outline: none;
   border: none;
   filter: drop-shadow(5px 5px 4px rgb(33, 33, 33));
-  background-color: #d56262;
+  background-color: #38bdf8;
 
   height: 100px;
   padding: 1%;
